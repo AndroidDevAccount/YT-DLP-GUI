@@ -22,4 +22,4 @@ A lightweight Windows GUI for [`yt-dlp`](https://github.com/yt-dlp/yt-dlp) built
 ### Running From Source
 1. Clone the repository:
    ```sh
-   git clone https://github.com/AndroidDevAccount/YT-DLP-GUI.git```
+   git clone https://github.com/AndroidDevAccount/YT-DLP-GUI.git
