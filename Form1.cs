@@ -29,7 +29,7 @@ namespace YTDownloader
             ProcessStartInfo ytDlpProcess = new ProcessStartInfo
             {
                 FileName = "cmd.exe",
-                Arguments = $"/c yt-dlp_x86.exe -f {downloadFormat} --output \"{currentDir}\\%(title)s.%(ext)s\" \"{url}\"",
+                Arguments = $"/k yt-dlp_x86.exe -f {downloadFormat} --output \"{currentDir}\\%(title)s.%(ext)s\" \"{url}\"",
                 UseShellExecute = true
             };
 
