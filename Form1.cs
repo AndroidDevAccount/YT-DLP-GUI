@@ -22,20 +22,21 @@ namespace YTDownloader
                 MessageBox.Show("Please enter a YouTube URL.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            string currentDir = Environment.CurrentDirectory;
-            string downloadFormat = "\"bv*[ext=mp4]+ba*[ext=m4a]/b[ext=mp4]\"";
 
-            // Step 1: Download Video with yt-dlp
-            ProcessStartInfo ytDlpProcess = new ProcessStartInfo
+            // Build the exact command: yt-dlp_x86.exe -f "bv*+ba" <url>
+            string command = $"/k yt-dlp_x86.exe -f \"bv*+ba\" \"{url}\"";
+
+            ProcessStartInfo psi = new ProcessStartInfo
             {
                 FileName = "cmd.exe",
-                Arguments = $"/k yt-dlp_x86.exe -f {downloadFormat} --output \"{currentDir}\\%(title)s.%(ext)s\" \"{url}\"",
+                Arguments = command,
                 UseShellExecute = true
             };
 
-            Process ytProcess = Process.Start(ytDlpProcess);
-
+            Process.Start(psi);
         }
+
+
 
 
         private void button2_Click(object sender, EventArgs e)
